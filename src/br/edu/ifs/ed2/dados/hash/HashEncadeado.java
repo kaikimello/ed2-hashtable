@@ -7,6 +7,7 @@ import br.edu.ifs.ed2.dados.hash.chave.EstrategiaChave;
 import br.edu.ifs.ed2.dados.hash.colisao.EstrategiaColisao;
 import br.edu.ifs.ed2.dados.hash.espalhamento.EstrategiaEspalhamento;
 import br.edu.ifs.ed2.dados.lista.Lista;
+import br.edu.ifs.ed2.dados.lista.ListaSimples;
 
 /**
  * 
@@ -56,19 +57,20 @@ public class HashEncadeado<G> extends Hash<G> {
 		 * Verificação e, consequente, indicação de inserção mal sucedida.
 		 */
 		if (indice < 0) {
-
+			return false;
 		}
 
 		/*
 		 * Verificação e, consequente, inicialização da lista, caso seja nula.
 		 */
 		if (this.getTabela()[indice] == null) {
-
+			this.getTabela()[indice] = new ListaSimples<>();
 		}
 
 		/*
 		 * Inserção do elemento na lista.
 		 */
+		this.getTabela()[indice].inserirInicio(conteudo);
 
 		/*
 		 * Indicação de inserção bem sucedida.
@@ -86,12 +88,14 @@ public class HashEncadeado<G> extends Hash<G> {
 		 * Verificação e, consequente, indicação de remoção mal sucedida.
 		 */
 		if (indice < 0) {
+			return false;
 
 		}
 
 		/*
 		 * Remoção do elemento e alteração do estado para removido.
 		 */
+		this.getTabela()[indice].remover(conteudo);
 
 		/*
 		 * Indicação de remoção bem sucedida.

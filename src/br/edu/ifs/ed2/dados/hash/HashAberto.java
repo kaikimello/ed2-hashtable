@@ -64,15 +64,14 @@ public class HashAberto<G> extends Hash<G> {
 		 * Verificação e, consequente, indicação de inserção mal sucedida.
 		 */
 		if (indice < 0) {
-			System.out.println("O indice tem que sera maior ou igual a 0");
 			return false;
 		}
 
 		/*
 		 * Inserção do elemento e alteração do estado para ocupado.
 		 */
-		this.getEstado()[indice] = null;
-		this.getTabela()[indice] = null;
+		this.getEstado()[indice] = "O";
+		this.getTabela()[indice] = conteudo;
 
 		/*
 		 * Indicação de inserção bem sucedida.
@@ -90,13 +89,13 @@ public class HashAberto<G> extends Hash<G> {
 		 * Verificação e, consequente, indicação de remoção mal sucedida.
 		 */
 		if (indice < 0) {
-
+			return false;
 		}
 
 		/*
 		 * Remoção do elemento e alteração do estado para removido.
 		 */
-		this.getEstado()[indice] = null;
+		this.getEstado()[indice] = "R";
 		this.getTabela()[indice] = null;
 
 		/*
@@ -139,7 +138,7 @@ public class HashAberto<G> extends Hash<G> {
 	/**
 	 * Método que altera o vetor de estados da tabela de espalhamento.
 	 * 
-	 * @param tabela Novo vetor de estados da tabela.
+	 * @param //tabela Novo vetor de estados da tabela.
 	 */
 	private void setEstado(String estado[]) {
 

@@ -28,6 +28,7 @@ public class ColisaoEncadeada<G> implements EstrategiaColisao<G> {
 		/*
 		 * Resolução da colisão e, consequentemente, cálculo do novo valor do índice.
 		 */
+		novoIndice = indiceInicial % tabela.getTamanho();
 
 		/*
 		 * Retorno do novo índice.
@@ -47,6 +48,7 @@ public class ColisaoEncadeada<G> implements EstrategiaColisao<G> {
 		 * Verificação da condição da célula da tabela referente ao índice inicial.
 		 */
 		if (hash.getTabela()[indiceInicial] == null) {
+			return -1;
 
 		}
 
@@ -54,6 +56,7 @@ public class ColisaoEncadeada<G> implements EstrategiaColisao<G> {
 		 * Verificação da lista alocada na célula da tabela referente ao índice inicial.
 		 */
 		if (hash.getTabela()[indiceInicial].buscar(conteudo) == null) {
+			return -1;
 
 		}
 

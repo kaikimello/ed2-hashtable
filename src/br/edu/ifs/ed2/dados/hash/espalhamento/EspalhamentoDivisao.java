@@ -25,8 +25,6 @@ public class EspalhamentoDivisao<G> implements EstrategiaEspalhamento<G> {
 		/*
 		 * Cálculo do índice com base na técnica de divisão
 		 */
-		indice = 0;
-
 		indice = chave % tamanho;
 
 		/*
